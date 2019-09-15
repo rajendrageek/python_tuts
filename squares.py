@@ -11,8 +11,9 @@ def square(num):
 a = square(10)
 print(a)
 
-message = 'hello prasanna'
+message = 'hello anji'
 print(len(message))
 
 
 print(message[6:])
+
