@@ -1,11 +1,13 @@
 message = 'Hello World'
 print(message)
+
+# count the number of characters in a string
 print(len(message))
 
 print(message[6:])
 print(message[:5])
 
-# count the number of characters in a string
+# count the number of times phrase or string in a given string
 print(message.count('Hello'))
 print(message.count('l'))
 
@@ -14,8 +16,8 @@ print(message.find('Hello'))
 print(message.find('l'))
 print(message.find('universe')) # it con't find that so it returns -1 
 
-# Replcing a word in a sentence
-new_message = message.replace('world0', 'Universe')
+# Replacing a word in a sentence
+new_message = message.replace('world', 'Universe')
 print(new_message)
 
 # String concating
@@ -145,7 +147,7 @@ print(a.upper())
 a = 'Hello, World'
 print(a.replace('H', 'J'))
 
-# Split method splits the string into substrings if it finds instance of separator
+# Split method splits the string into list, you can specify the separator separator
 a = 'Hello, World!'
 print(a.split(','))
 
@@ -302,6 +304,71 @@ itemno = 567
 price = 49.95
 myorder = 'I want to pay {2} dollars for {0} pieces of item {1}.'
 print(myorder.format(quantity, itemno, price))
+
+
+# ljust
+# the ljust method will left align the string, using a specified character as fill character
+string = 'banana'
+x = string.ljust(20)
+print(x, 'is my favourite fruit')
+
+# lstrip
+# the lstrip method removes the leading characters in the string(space is the default character to remove)
+txt = '  banana   '
+x = txt.lstrip()
+print("of all fruits", x, "is my favourite fruit")
+
+txt = 'asdsdbanana'
+x = txt.lstrip('asd')
+print('of all fruits', x, "is my favourite fruit")
+
+
+# rfind
+# searches the string and find the last occurence of the specified value. It returns -1 if the value is not found
+# It is almost same as the rindex 
+txt = "welcome to my world"
+x = txt.rfind("e")
+print(x)
+
+y = txt.rfind("e", 5, 10)
+print(y)
+
+# rindex
+# searches the string and find the last occurence of the specifies value. it raises an exeception if the value is not found
+txt = "welcome to my world"
+x = txt.rindex("e", 5, 10)
+print(x)
+
+# rjust 
+# the rjust() method will right align the string, using a specified character(space is default) as the fill character
+txt = 'banana'
+x = txt.rjust(20)
+print(x)
+ 
+# rpartition()
+# The rpartition method searches for the last occurence of a specified string, and splits the string into a tuple containing
+# three elements
+# the first element contains the part before the specified string
+# the second element conatains the specified string
+# The third element contains the part after the string
+txt = " I could eat bananas all day,  bananas are my favourite fruit"
+x = txt.rpartition("bananas")
+print(x)
+
+# rstrip()
+# rstrip method removes any trailing characters(characters at the end of a string), space is default trailing characters
+# to remove
+txt = "  banana  "
+x = txt.rstrip()
+print("of all fruits", x, "is my favourite fruit")
+
+# rsplit()
+# rsplit method split the string into list starting from the right
+# if no max is specified, this method will return the same as the split() method
+
+txt = "apple, banana, cherry"
+x = txt.rsplit(",")
+print(x)
 
 # Python operators
 # operators are used to perform operations on variables and values

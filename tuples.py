@@ -1,4 +1,4 @@
-# A tuple is a collection which is ordered and unchangeable. In python tuples are written with round brackets
+# A tuple is a collection which is ordered and unchangeable allows duplicate members. In python tuples are written with round brackets
 # Create tuple
 thistuple = ('apple', 'banana', 'cherry')
 print(thistuple)

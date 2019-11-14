@@ -1,4 +1,4 @@
-# List is a collection which is ordered and changeable. In python lists are written with square brackets
+# List is a collection which is ordered and changeable allows dupllicate members. In python lists are written with square brackets
 # Create list 
 thislist = ['apple', 'banana', 'cherry']
 print(thislist)
