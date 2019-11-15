@@ -139,7 +139,7 @@ print(a.strip())
 a = 'Hello, World!'
 print(a.lower())
 
-# The upper method returns the string in the upper case
+# The upper method returns the string in the upper case  where all the numbers and symbols are ignored
 a = 'hello, world!'
 print(a.upper())
 
@@ -147,7 +147,7 @@ print(a.upper())
 a = 'Hello, World'
 print(a.replace('H', 'J'))
 
-# Split method splits the string into list, you can specify the separator separator
+# Split method splits the string into list, you can specify the separator 
 a = 'Hello, World!'
 print(a.split(','))
 
@@ -238,7 +238,7 @@ y = txt.splitlines()
 print(y)
 
 # Swapcase()
-# swaps cases, lower case becomes upper case and vice versa
+# swapcase() method returns a string where all the upper case letters are  lower case and vice versa
 a = "Hello"
 print(a.swapcase())
 
@@ -369,6 +369,14 @@ print("of all fruits", x, "is my favourite fruit")
 txt = "apple, banana, cherry"
 x = txt.rsplit(",")
 print(x)
+
+# title()
+# title() method returns a string where the first character in every word is upper case. like header, or a title
+# if the word contains a number or symbol, the first letter after that will be converted to upper case
+txt = "Welcome to my second world"
+x = txt.title()
+print(x)
+
 
 # Python operators
 # operators are used to perform operations on variables and values
