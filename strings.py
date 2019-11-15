@@ -244,6 +244,8 @@ print(a.swapcase())
 
 
 # zfill
+# the zfill method()  adds zeros(0) at the begining of the string, until it reaches the specified lenght
+# if the value of len parameter is less than the lenght of the string, no filling is done 
 txt = '50'
 x = txt.zfill(10)
 print(x)
