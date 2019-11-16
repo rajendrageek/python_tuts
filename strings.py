@@ -1,3 +1,32 @@
+# String literals in python are surrounded by either  single quotation marks, or double quotation marks 
+# "hello" is same as 'hello'
+# You can display the string literal using print() function
+print("Hello")
+print('Hello')
+
+# You can assign a multiline string to a variable by using three quotes
+# You can use three double quotes 
+a = """ Rajendra is a good boy,
+        he is so ambisious and wise,
+        he will do what he wants."""
+
+# or three single quotes
+a = ''' Rajendra is a good boy
+        he is so ambisious and wise,
+        he will do what he wants.'''
+print(a)
+
+# In the result the line breaks are inserted at the same position as in the code
+
+# Strings are arrays
+# Like many other programing languages, strings in python are arrays of bytes representing unicode characters
+# However python does not have a character data type, a single character simply a string with a lenght of 1.
+# square brackets can be used to access elements of the string
+
+# Get the character at the position 1
+x = "Hello, World!"
+print(x[1])
+
 message = 'Hello World'
 print(message)
 
@@ -7,7 +36,7 @@ print(len(message))
 print(message[6:])
 print(message[:5])
 
-# count the number of times phrase or string in a given string
+# count() method returns the number of times a specified value appears in the string
 print(message.count('Hello'))
 print(message.count('l'))
 
@@ -16,7 +45,7 @@ print(message.find('Hello'))
 print(message.find('l'))
 print(message.find('universe')) # it con't find that so it returns -1 
 
-# Replacing a word in a sentence
+# replace() method replaces a specified phrase with another specifed phrase
 new_message = message.replace('world', 'Universe')
 print(new_message)
 
@@ -99,7 +128,7 @@ he is so ambicious and wise
 print(a)
 
 # note: in the result, the line breaks are inserted at the same position as in the code
-# STRINGS ARE ARRAYs
+# Strings are arrays
 # Like many other programing languages, strings in Python are arrays of bytes representing unicode
 # characters However python does not have a character datatype, a single character is simply a string with a length of 1
 # Square brackets can be used to access elements of the string.
@@ -131,15 +160,16 @@ print(len(a))
 
 # String methods
 # Python has a set of built in methods that you can use on strings
-# The strip method removes any white space froom begining or the end
+# The strip method removes any leading and trailing characters(space is the default leading character to remove)
 a = ' hello, world! '
 print(a.strip())
  
-# The lower method returns the string in lower case
+# The lower() method returns the string where all characters are lower case
+# Symbols and numbers are ignored 
 a = 'Hello, World!'
 print(a.lower())
 
-# The upper method returns the string in the upper case  where all the numbers and symbols are ignored
+# The upper() method returns the string in the upper case  where all the numbers and symbols are ignored
 a = 'hello, world!'
 print(a.upper())
 
@@ -147,22 +177,34 @@ print(a.upper())
 a = 'Hello, World'
 print(a.replace('H', 'J'))
 
-# Split method splits the string into list, you can specify the separator 
+# Split method splits the string into list, you can specify the separator
+# default separator is the white space
+# When the maxsplit is specified, the list will contain specified number of elements plus one
+
 a = 'Hello, World!'
 print(a.split(','))
 
-# converts the string into lower case
+# The casefold() method returns a string where all the characters are lower case 
+# This method is similar to the lower() method, but the casefold() method is stronger, more aggressive
+# meaning that it will convert more characters into lowercase, and will find more matches when comparing two
+# strings and both converted using the casefold method
 a = 'HELLO WORLD'
 #y = a.casefold()
 #print(y)
 
 # capitalize() method
-# converts the first character to uppercase
+#  The capitalize() method returns a string wherre the first character to uppercase
 a = 'hello, world!'
 x = a.capitalize()
 print(x)
 
-# encode()
+# See what happens if the first character is a number
+txt = "26 is my age"
+x = txt.capitalize()
+print(x)
+
+# encode() method encode the string, using specified encoding. if no encoding is specified
+# UTF-8 will be used
 name = 'My name is rajendra'
 print(name.encode(encoding='ascii', errors='backslashreplace'))
 print(name.encode(encoding='ascii', errors='ignore'))
@@ -177,14 +219,11 @@ name = 'rajendra'
 modified_name = name.center(10, '*')
 print(modified_name)
 
-# endswith()
-# returns true if the string endswith specified value
+# endswith() method returns true if the string endswith specified value, otherwise false
 name = 'rajendra'
 print(name.endswith('r'))
 
-# expandtabs()
-# Sets the tabsize of the string
-
+# expandtabs()  Sets the tabsize to the specified number of white spaces    
 name = 'rajendra'
 txt ='H\te\tl\tl\to'
 print(txt.expandtabs())
@@ -194,6 +233,8 @@ print(txt.expandtabs(4))
 
 #join() 
 # join memthod takes all the items in an iterable and joins them into one string
+# A string must be specidied as separator
+
 mytuple = ['john', 'peter', 'vicky']
 x = '#'.join(mytuple)
 print(x)
@@ -206,7 +247,10 @@ print(x)
 # maketrans()
 # maketrans method returns traslation talbe to be used in translations
 # find()
-# find method returns the first ocuurence of the specified where it was found
+# find method finds the first occurence of the specified value
+# find method returns the -1 if the value is not found
+# The find method is almost the same as the index method, the only difference is that index()
+# raises the exception if the value is not found
 
 x = 'hello, welcome to my world'
 y = x.find('welcome')
@@ -214,14 +258,105 @@ v = x.find('helo')
 print(y)
 print(v)
 
+# Index method finds the first occurence of the specified value 
+# The index method raises an exception if the value is not found
+# The index method is almost the same as the find method, the only difference is that the
+# find method returns -1 if the value is not found but index() method raises an exception 
 z = 'hello world'
 w = z.index('hello')
 print(w)
+
+# isalnum() method returns true if all the characters are alphanumeric, meaning alphabet letter
+# and numbers 0-9
+txt = 'company12'
+x = txt.isalnum()
+print(x)
+
+# isalpha() returns true if all the characters are alphabet letters(a-z)
+txt = "ComapnyX"
+x = txt.isalpha()
+print(x)
+
+# isdecimal() method returns True if all the characters are decimals
+# This method is used on unicode objects
+a = "\u0030"
+print(a.isdecimal())
+
+# isdigit() method returns true if all the characters are digits, otherwise false
+# Exponets like, are also considered to be digit
+a = "\u0030"
+b = "\u00B2"
+
+print(a.isdigit())
+print(b.isdigit())
+
+# isidentifier()  returns true if the string is a valid identifier, otherwise false
+# A string is consider a valid identifier if it only contains alphanumeric letters, or underscore
+# A valid identifier cannot start with a number or contain any spaces
+a = "MyFolder"
+b = "Demo002"
+
+print(a.isidentifier())
+print(b.isidentifier())
+
+# islower() method returns True if all the characters are  in lower case, otherwise false
+# Numbers, symbols and spaces are not checked, only alphabet characters
+a = "hello, world!"
+b = "hello 123"
+print(a.islower())
+print(b.islower())
+
+# isnumeric() method returns true if all the characters are numeric 0-9, otherwise false
+# Exponents like 2 3/4 are also considered to be numeric values 
+a = "\u0030"
+b = "\u00B2"
+c = "10km2"
+
+print(a.isnumeric())
+print(b.isnumeric())
+print(c.isnumeric())
+
+# The isprintable() method returns true if all the characters are printable, otherwise false
+# Example of none printable characters can be carriage return and line feed
+txt = "Hello!\nAre you #1?"
+x = txt.isprintable()
+print(x)
+
+# isspace() method returns true if all the characters in a string are white spaces, otherwise false
+txt = " s "
+x = txt.isspace()
+print()
+
+# istitle() method returns True if all words in a text start with upper case letter,
+# and the rest of the word are lower case letters, otherwise flase
+# Symbols and numbers are ignored
+a = "Hello"
+b = "HELLO"
+c = "22 Names"
+
+print(a.istitle())
+print(b.istitle())
+print(x.istitle())
+
+# isupper() method returns true if all the characters are in upper case, otherwise false
+# numbers, symbols and spaces are not checked, only alphabet characters
+a = "Hello World!"
+b = "hell0 123"
+c = "MY NAME IS RAJENDRA"
+
+print(a.isupper())
+print(b.isupper())
+print(c.isupper())
+
+# 
+
+
 
 # The partition method searches for specified string, and splits the string into a tuple containing three elements
 # the first part before the specified string
 # the second element contains specified strig
 # the third element contains the part after the specified part
+# this method search for the first occurence of the specified string
 
 txt = 'i could eat bananas all the day'
 x = txt.partition('bananas')
@@ -236,6 +371,11 @@ print(x)
 txt ='thank you for the music\n Welcome to the jungle'
 y = txt.splitlines()
 print(y)
+
+# startswith() method returns true if the string startswith the specified value, otherwise false
+txt = "hello, welcome to my world"
+x = txt.startswith("wel", 7, 20)
+print(x)
 
 # Swapcase()
 # swapcase() method returns a string where all the upper case letters are  lower case and vice versa
@@ -278,6 +418,8 @@ c = a +' ' + b
 print(c)
 
 # String format
+# The format method formats the specified value and insert them inside the strings placeholder
+# The placeholder is defined using curly brackets: { }
 # As we learned in the python variables chapter, we cannot combine like this
 
 age = 36
@@ -325,9 +467,9 @@ x = txt.lstrip('asd')
 print('of all fruits', x, "is my favourite fruit")
 
 
-# rfind
-# searches the string and find the last occurence of the specified value. It returns -1 if the value is not found
-# It is almost same as the rindex 
+# rfind() finds the last occurence of the specified value
+# It returns -1 if the value is not found
+# It is almost same as the rindex()
 txt = "welcome to my world"
 x = txt.rfind("e")
 print(x)
@@ -367,6 +509,8 @@ print("of all fruits", x, "is my favourite fruit")
 # rsplit()
 # rsplit method split the string into list starting from the right
 # if no max is specified, this method will return the same as the split() method
+# When maxsplis is specified, this method will contain the specified number of elements plus one
+
 
 txt = "apple, banana, cherry"
 x = txt.rsplit(",")
@@ -379,6 +523,10 @@ txt = "Welcome to my second world"
 x = txt.title()
 print(x)
 
+# Escape character that are illegal in a string, use an escape character.
+# An escape character is a backslash \ followed by the character you want to insert 
+# An example of an illegal character is a double quote inside a string that is surrounded by double quotes
+txt = "We are the so called \"vikings\" from the north"
 
 # Python operators
 # operators are used to perform operations on variables and values
