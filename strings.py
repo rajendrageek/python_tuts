@@ -595,8 +595,3 @@ txt = "We are the so called \"vikings\" from the north"
 # modules are code libraries you can include in your project
 # check if pip is installed 
 # Once package is installed you can use that package in your project
-
-
-
-
-# new comment
