@@ -1,7 +1,7 @@
 # List is a collection which is ordered and changeable allows dupllicate members. In python lists are written with square brackets
 # Create list 
 thislist = ['apple', 'banana', 'cherry']
-print(thislist
+print(thislist)
 
 # Access items by referring the index number
 # print the second item of the list
