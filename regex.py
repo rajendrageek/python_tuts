@@ -67,7 +67,7 @@ print(x)
 import re 
 str1 = 'The rain in spain'
 x = re.sub('\s', 9, str1, 2)
-
+print(x)
 # Match object
 # A match object is an object containing information about search and result
 

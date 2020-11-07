@@ -186,3 +186,22 @@ print(fruits)
 numbers = [1, 7, 9, 4, 5, 6]
 numbers.sort()
 print(numbers)
+
+
+# list comprehensions
+h_letters = [letter for letter in 'human']
+print(h_letters)
+
+number_list = [ x for x in range(20) if x %2 ==0]
+print(number_list)
+
+num_list = [x for x in range(100) if x % 2 == 0 and x % 5 ==0]
+print(num_list)
+
+
+evens = ["Even" if x%2 == 0 else "odd" for i in range(10) ]
+print(evens)
+
+# Transpose of a matrix using list comprehensions
+matrix = [[1, 2], [3, 4], [5, 6]]
+transpose = [[row[i] for row in matrix]for i in range(2)]
