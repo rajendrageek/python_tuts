@@ -187,6 +187,9 @@ numbers = [1, 7, 9, 4, 5, 6]
 numbers.sort()
 print(numbers)
 
+# To sort in reverse order
+numbers.sort(reverse=True)
+print(numbers)
 
 # list comprehensions
 h_letters = [letter for letter in 'human']
