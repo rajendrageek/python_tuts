@@ -1,4 +1,4 @@
-# String literals in python are surrounded by either  single quotation marks, or double quotation marks 
+# String literals in python are surrounded by either single quotation marks, or double quotation marks 
 # "hello" is same as 'hello'
 # You can display the string literal using print() function
 print("Hello")

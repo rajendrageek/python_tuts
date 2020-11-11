@@ -16,7 +16,7 @@
 # 'b' -binary - binary mode
 
 # To open a file for reading it is enough to specify the name of the file
-f = open('demofile.txt')
+f = open("demofile.txt")
 
 f = open('demofile.txt', 'rt')
 
@@ -123,3 +123,85 @@ else:
 import os
 os.rmdir('myfolder')
 # note you can only remove empty folder
+
+# To get the os name
+print(os.name)
+
+# listdir() used to get list of files and subdirectories in directory given by the path argument 
+entries = os.listdir('my_directory/')
+
+print(entries)
+
+# In modern versions(3.5) of python os.scandir() introduced 
+# instead of list of names it will gives us the iterator fo all objects including file attributes
+# information
+
+
+with os.scandir('my_directory/') as entries:
+    for entry in entries:
+        print(entry.name)
+
+# making directiories 
+os.mkdir("my_directory/") # creates a single subdirectory  if a directory already existed 
+# it raises "FileExistsError". alternatively you can create a directory using pathlib:
+
+from pathlib import Path
+p = Path("my_directory/")
+p.mkdir()
+
+os.makedirs("raj/anji/srinu") # to make multiple directories
+
+import pathlib
+# Deleting files
+os.remove("usr/bin/somefile")
+os.unlink("usr/bin/somefile")
+pathlib.Path.unlink("usr/bin/somefile")
+
+
+#Deleting directories11
+trashdir = "my_doc/bad_dir"
+os.rmdir(trashdir)
+
+# Deleting entire directory trees
+import shutil
+shutil.rmtree("trashdir")
+
+# we can also use shutil module to copy, move
+
+src = "somefile1"
+dst = "somefile2"
+shutil.copy(src, dst)
+shutil.copytree() # copies everything containing directory
+
+# moving files and directories
+# To move a file or directory to another location , use 
+shutil.move(src, dst)
+
+
+# renaming files 
+os.rename("firstzip", "01_firstzip")
+
+# form pathlib
+filepath = Path("somefile3")
+filepath.rename("dataexist")
+
+# to zipfile
+import zipfile
+
+with zipfile.zipfile("data.zip", "r") as zipobj:
+    bar_info = zipobj.getinfo("sub_dir/bar.py")
+    bar_info.file_size
+
+
+data_zip = zipfile.ZipFile('data.zip', 'r')
+# Extract a single file to current directory
+data_zip.extract("file1.py")
+
+# Extract all files into a different directory
+data_zip.extractall(path="extract_dir")
+
+
+
+
+
+
